@@ -1,12 +1,13 @@
-# Portfolio 2026
+# Hatim El Hassak — Luxury Engineering Portfolio
 
 ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
 
-> A luxury, neo-brutalist portfolio crafted with Next.js, Framer Motion, and Tailwind CSS.
-> Designed to showcase engineering excellence through premium interactions and deep content.
+> **"Engineering at the speed of thought."**
+> 
+> A high-performance, **Luxury Neo-Brutalist** portfolio designed to demonstrate mastery of modern frontend engineering. Built with **Next.js 14**, **Framer Motion**, and **Tailwind CSS**, it features complex parallax effects, 3D interactions, and a custom design system that blends raw aesthetics with premium polish.
 
 ---
 
@@ -41,8 +42,8 @@ To run this project locally:
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/hatimhtm/portfolio.git
-    cd portfolio
+    git clone https://github.com/hatimhtm/luxury-engineering-portfolio.git
+    cd luxury-engineering-portfolio
     ```
 
 2.  **Install dependencies**
