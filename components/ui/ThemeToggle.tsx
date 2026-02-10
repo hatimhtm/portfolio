@@ -10,7 +10,7 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="relative w-9 h-9 border-[3px] border-current flex items-center justify-center hover:bg-acid hover:text-ink hover:border-acid transition-all group"
+            className="relative w-9 h-9 border-[3px] border-cream/40 text-cream/60 flex items-center justify-center hover:bg-acid hover:text-ink hover:border-acid transition-all group"
             aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
         >
             <AnimatePresence mode="wait" initial={false}>
