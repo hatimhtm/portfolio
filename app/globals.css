@@ -600,3 +600,79 @@ body::before {
     --shadow-y: 3px;
   }
 }
+
+/* ═══════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════ */
+[data-theme="dark"] {
+  --cream: #1A1A1A;
+  --ink: #FFFDF5;
+}
+
+[data-theme="dark"] body {
+  background: #1A1A1A;
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .bg-cream {
+  background-color: #1A1A1A;
+}
+
+[data-theme="dark"] .text-ink {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .bg-ink {
+  background-color: #2A2A2A;
+}
+
+[data-theme="dark"] .text-cream {
+  color: #FFFDF5;
+}
+
+[data-theme="dark"] .border-ink {
+  border-color: #FFFDF5;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #FFFDF5;
+  border-color: #1A1A1A;
+}
+
+/* ═══════════════════════════════════════════
+   ADDITIONAL UTILITIES
+   ═══════════════════════════════════════════ */
+
+/* Blink animation for terminal cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Custom cursor utility */
+.cursor-none {
+  cursor: none;
+}
+
+.cursor-none * {
+  cursor: none;
+}
+
+/* Print styles */
+@media print {
+  .neo-card {
+    border: 1px solid #000;
+    box-shadow: none;
+  }
+  nav {
+    display: none;
+  }
+}
