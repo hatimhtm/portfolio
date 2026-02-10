@@ -9,7 +9,6 @@ import LoadingScreen from "@/components/ui/LoadingScreen";
 import CommandPalette from "@/components/ui/CommandPalette";
 import MagneticButton from "@/components/ui/MagneticButton";
 import Link from "next/link";
-import { FileDown } from "lucide-react";
 
 const spaceGrotesk = Space_Grotesk({
     subsets: ["latin"],
@@ -96,11 +95,10 @@ export default function RootLayout({
                                 <a
                                     href="/resume.pdf"
                                     download="Hatim_El_Hassak_Resume.pdf"
-                                    className="hidden md:flex items-center gap-1.5 font-mono text-[0.6rem] md:text-xs font-bold uppercase tracking-wider text-cream/60 hover:text-acid transition-colors px-2 py-1"
+                                    className="hidden md:flex items-center gap-1 font-mono text-[0.6rem] md:text-xs font-bold uppercase tracking-wider text-cream/60 hover:text-acid transition-colors px-2 py-1 border-[2px] md:border-[3px] border-cream/30 hover:border-acid"
                                     aria-label="Download Resume"
                                 >
-                                    <FileDown size={12} />
-                                    CV
+                                    CV ↓
                                 </a>
                             </MagneticButton>
                             <MagneticButton>
