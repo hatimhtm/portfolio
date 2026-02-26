@@ -3,6 +3,8 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+const HOVER_SELECTOR = "a, button, [role='button'], input, textarea, select";
+
 export default function CustomCursor() {
     const [isVisible, setIsVisible] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
@@ -31,33 +33,28 @@ export default function CustomCursor() {
             return;
         }
 
+        const handleMouseEnter = () => setIsVisible(true);
+        const handleMouseLeave = () => setIsVisible(false);
+
         window.addEventListener("mousemove", moveCursor);
-        window.addEventListener("mouseenter", () => setIsVisible(true));
-        window.addEventListener("mouseleave", () => setIsVisible(false));
+        window.addEventListener("mouseenter", handleMouseEnter);
+        window.addEventListener("mouseleave", handleMouseLeave);
 
         // Track hoverable elements
         const handleMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
-            if (
-                target.closest("a") ||
-                target.closest("button") ||
-                target.closest("[role='button']") ||
-                target.closest("input") ||
-                target.closest("textarea") ||
-                target.closest("select")
-            ) {
-                setIsHovering(true);
-            }
+            // Use closest to check if the target or any of its ancestors match the selector
+            const isHoverable = target.closest(HOVER_SELECTOR);
+            setIsHovering(!!isHoverable);
         };
-        const handleMouseOut = () => setIsHovering(false);
 
         document.addEventListener("mouseover", handleMouseOver);
-        document.addEventListener("mouseout", handleMouseOut);
 
         return () => {
             window.removeEventListener("mousemove", moveCursor);
+            window.removeEventListener("mouseenter", handleMouseEnter);
+            window.removeEventListener("mouseleave", handleMouseLeave);
             document.removeEventListener("mouseover", handleMouseOver);
-            document.removeEventListener("mouseout", handleMouseOut);
         };
     }, [moveCursor]);
 
