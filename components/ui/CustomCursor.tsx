@@ -38,14 +38,7 @@ export default function CustomCursor() {
         // Track hoverable elements
         const handleMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
-            if (
-                target.closest("a") ||
-                target.closest("button") ||
-                target.closest("[role='button']") ||
-                target.closest("input") ||
-                target.closest("textarea") ||
-                target.closest("select")
-            ) {
+            if (target.closest("a, button, [role='button'], input, textarea, select")) {
                 setIsHovering(true);
             }
         };
