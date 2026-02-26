@@ -1,7 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
     try {
+        const ip = req.ip || req.headers.get("x-forwarded-for") || "127.0.0.1";
+        const isAllowed = await rateLimit(ip, 5, 60000); // 5 requests per minute
+
+        if (!isAllowed) {
+            return NextResponse.json(
+                { error: "Too many requests. Please try again later." },
+                { status: 429 }
+            );
+        }
+
         const body = await req.json();
         const { name, email, budget, brief } = body;
 
